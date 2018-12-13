@@ -1,0 +1,1 @@
+~/redis-stable/src/redis-cli --cluster create 192.168.33.21:6379 192.168.33.22:6380 192.168.33.23:6381

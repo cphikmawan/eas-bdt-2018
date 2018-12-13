@@ -1,0 +1,1 @@
+~/redis-stable/src/redis-cli --cluster add-node 192.168.33.23:6380 192.168.33.22:6380 --cluster-slave
