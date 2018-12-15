@@ -66,11 +66,11 @@
                         </a>
                     </li>
                     <li>
-                        <a class="{{ request()->is('viewbook') ? 'active' : '' }}" href="viewbook">
+                        <a class="{{ request()->is('viewbook') ? 'active' : '' }}" href="/viewbook">
                             <i class="si si-notebook"></i>Book
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a class="{{ request()->is('pagelist') ? 'active' : '' }}" href="/pagelist">
                             <i class="si si-list"></i>Pages List
                         </a>

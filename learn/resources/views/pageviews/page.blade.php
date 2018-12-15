@@ -11,5 +11,5 @@
 @endsection
 
 @section('content')
-    <h5 class="text-center">This is {{ $page->name }} Visited {{ $page->count }} Times</h5> 
+    <h5 class="text-center">This is {{ $page->name }} Visited {{ $res[0] }} Times</h5> 
 @endsection

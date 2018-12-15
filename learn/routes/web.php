@@ -72,6 +72,3 @@ Route::get('/createpage','PageController@create');
 Route::post('/savepage','PageController@store');
 Route::get('/pagerank','PageController@ranking');
 Route::get('/thepages/{id}','PageController@pages');
-
-// redis
-Route::get('/redislist','PageController@indexRedis');

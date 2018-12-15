@@ -12,33 +12,17 @@
 
 @section('content')
 <div class="block">
-        <div class="block-header block-header-default bg-info">
+        <div class="block-header block-header-default">
             <h3 class="block-title">Page Rank</small></h3>
         </div>
         <div class="block-content block-content-full">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Key</th>
-                            <th class="text-center">Name</th>
-                            <th class="text-center">Count</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{ csrf_field() }}
-                    @if(count($pages)!=0)
-                        @foreach ($pages as $data)
-                            <tr>
-                                <td class="text-center">{{ $data->key }}</td>
-                                <td class="">{{ $data->name }}</td>
-                                <td class="text-center">{{ $data->count }}</td>
-                            </tr>
-                        @endforeach
-                    @endif
-                    </tbody>
-                </table>
-            </div>
+            @for($i=0; $i<count($res); $i++)
+                @for($j=0; $j<count($res[$i]); $j++)
+                    <ul>
+                        <li> Page With ID {{$res[$i][$j][0] }} Visited {{ $res[$i][$j][1] }} Times</li>
+                    </ul>
+                @endfor
+            @endfor
         </div>
     </div>
 @endsection
