@@ -44,22 +44,22 @@ Vagrant.configure("2") do |config|
   end
 
   # redis cluster -> fail
-  # (1..3).each do |i|
-  #   config.vm.define "redis#{i}" do |node|
-  #     node.vm.hostname = "redis#{i}"
-  #     node.vm.box = "bento/ubuntu-16.04"
-  #     node.vm.network "private_network", ip: "192.168.33.2#{i}"
+  (1..3).each do |i|
+    config.vm.define "redis#{i}" do |node|
+      node.vm.hostname = "redis#{i}"
+      node.vm.box = "bento/ubuntu-16.04"
+      node.vm.network "private_network", ip: "192.168.33.2#{i}"
 
-  #     # Opsional. Edit sesuai dengan nama network adapter di komputer
-  #     node.vm.network "public_network", bridge: "enp2s0"
-  #     node.vm.provider "virtualbox" do |vb|
-  #       vb.name = "redis#{i}"
-  #       vb.gui = false
-  #       vb.memory = "512"
-  #     end
+      # Opsional. Edit sesuai dengan nama network adapter di komputer
+      node.vm.network "public_network", bridge: "enp2s0"
+      node.vm.provider "virtualbox" do |vb|
+        vb.name = "redis#{i}"
+        vb.gui = false
+        vb.memory = "512"
+      end
   
-  #     node.vm.provision "shell", path: "redis/provision.sh", privileged: false
-  #     # node.vm.provision "shell", path: "redis/connect#{i}.sh", privileged: false
-  #   end
-  # end
+      node.vm.provision "shell", path: "redis-cluster/provision.sh", privileged: false
+      # node.vm.provision "shell", path: "redis/connect#{i}.sh", privileged: false
+    end
+  end
 end

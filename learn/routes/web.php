@@ -66,8 +66,12 @@ Route::group(['middleware' => ['web', 'auth', 'admin']], function()
 
 Route::get('/viewbook','BooksController@userView');
 
+// mongodb
 Route::get('/pagelist','PageController@index');
 Route::get('/createpage','PageController@create');
 Route::post('/savepage','PageController@store');
 Route::get('/pagerank','PageController@ranking');
-Route::get('thepages/{id}','PageController@pages');
+Route::get('/thepages/{id}','PageController@pages');
+
+// redis
+Route::get('/redislist','PageController@indexRedis');

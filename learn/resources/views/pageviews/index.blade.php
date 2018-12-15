@@ -25,6 +25,7 @@
                         <th class="text-center">Name</th>
                         <th class="text-center">Count</th>
                         <th class="text-center">Action</th>
+                        <th class="text-center"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,9 +36,16 @@
                             <td class="text-center">{{ $data->key }}</td>
                             <td class="">{{ $data->name }}</td>
                             <td class="text-center">{{ $data->count }}</td>
+                            @if(request()->is('thepages'))
                             <td class="text-center">
-                                <a href="{{action('PageController@pages', $data->id)}}" class="btn btn-sm btn-info"><i class="si si-eye"> Visit</i></a>
+                                <a href="{{ url('thepages/'.$data->id) }}" class="btn btn-sm btn-info"><i class="si si-eye"> Visit</i></a>
                             </td>
+                            @else
+                            <td class="text-center">
+                                <a href="" class="btn btn-sm btn-info"><i class="si si-eye"> Visit</i></a>
+                            </td>
+                            @endif
+                            <td class=""></td>
                         </tr>
                     @endforeach
                 @endif
