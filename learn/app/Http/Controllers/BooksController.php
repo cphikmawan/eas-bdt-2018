@@ -17,13 +17,8 @@ class BooksController extends Controller
 {
     public function index()
     {
-        $category = Cache::rememberForever('category', function() {
-            return Category::all();
-        });
-
-        $book = Cache::rememberForever('books', function() {
-            return Books::all();
-        });
+        $category = Category::all();
+        $book = Books::all();
         
         return view('dashboard.book', compact('book', 'category'));
     }
@@ -53,7 +48,6 @@ class BooksController extends Controller
         {
             $book = new Books;
             Books::create($request->all());
-            Cache::flush();
             Alert::success('Success Message', 'Success Add Book');
             return redirect('/books');
         }
@@ -83,7 +77,6 @@ class BooksController extends Controller
         else
         {
             $book->update($request->all());
-            Cache::flush();
             Alert::success('Success Message', 'Success Edit Book');
             return redirect('/books');
         }
@@ -93,20 +86,14 @@ class BooksController extends Controller
     {
         $book = Books::where('book_id',$id);
         $book->delete();
-        Cache::flush();
         Alert::success('Success Message', 'Success Delete Book');
         return redirect('books');
     }
 
     public function userView()
     {
-        $category = Cache::rememberForever('category', function() {
-            return Category::onlyTrashed()->get();
-        });
-
-        $book = Cache::rememberForever('books', function() {
-            return Books::onlyTrashed()->get();
-        });
+        $category = Category::all();
+        $book = Books::all();
         
         return view('frontpage.book', compact('book', 'category'));
     }

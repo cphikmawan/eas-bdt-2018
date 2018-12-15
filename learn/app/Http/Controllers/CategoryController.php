@@ -17,9 +17,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $category = Cache::rememberForever('category', function() {
-            return Category::all();
-        });
+        $category = Category::all();
         return view('dashboard.category', compact('category'));
     }
 
@@ -42,7 +40,6 @@ class CategoryController extends Controller
         {
             $category = new Category;
             Category::create($request->all());
-            Cache::flush();
             Alert::success('Success Message', 'Success Add Category');
             return redirect('/category');
         }
@@ -66,7 +63,6 @@ class CategoryController extends Controller
         else
         {
             $category->update($request->all());
-            Cache::flush();
             Alert::success('Success Message', 'Success Edit Category');
             return redirect('/category')->with('success', 'Success Edit Category');
         }
@@ -76,7 +72,6 @@ class CategoryController extends Controller
     {
         $category = Category::where('category_id',$id);
         $category->delete();
-        Cache::flush();
         Alert::success('Success Message', 'Success Delete Category');
         return redirect('category');
     }

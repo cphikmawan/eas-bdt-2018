@@ -25,7 +25,6 @@ class TrashController extends Controller
     public function bookRestore($id)
     {
         Books::withTrashed()->where('book_id', $id)->restore();
-        Cache::flush();
         Alert::success('Success Message', 'Success Restore Book');
         return redirect('/trash');
     }
@@ -33,7 +32,6 @@ class TrashController extends Controller
     public function categoryRestore($id)
     {
         Category::withTrashed()->where('category_id', $id)->restore();
-        Cache::flush();
         Alert::success('Success Message', 'Success Restore Category');
         return redirect('/trash');
     }
