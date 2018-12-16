@@ -50,6 +50,11 @@
                         </a>
                     </li>
                     <li>
+                        <a class="{{ request()->is('mongorank') ? 'active' : '' }}" href="/mongorank">
+                            <i class="si si-trophy"></i>Mongo Rank
+                        </a>
+                    </li>
+                    <li>
                         <a class="{{ request()->is('login') ? 'active' : '' }}" href="{{ route('login') }}">
                             <i class="si si-user"></i>Sign In
                         </a>
@@ -78,6 +83,11 @@
                     <li>
                         <a class="{{ request()->is('pagerank') ? 'active' : '' }}" href="/pagerank">
                             <i class="si si-trophy"></i>Pages Rank
+                        </a>
+                    </li>
+                    <li>
+                        <a class="{{ request()->is('mongorank') ? 'active' : '' }}" href="/mongorank">
+                            <i class="si si-trophy"></i>Mongo Rank
                         </a>
                     </li>
                     @if(Auth::user()->role_id == 1)

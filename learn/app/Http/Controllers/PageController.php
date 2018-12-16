@@ -44,6 +44,13 @@ class PageController extends Controller
         return view('pageviews.ranking',compact('res'));
     }
 
+    public function rankingMongo()
+    {
+        $pages = Pages::orderBy('count', 'desc')->get();
+    
+        return view('pageviews.rankingmongo',compact('pages'));
+    }
+
     public function pages($id)
     {
         // save to mongo

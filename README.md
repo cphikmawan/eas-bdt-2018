@@ -357,6 +357,18 @@ DB_PASSWORD=easapp
     ```
 
 ### 6. Penggunaan
+
+> Command untuk demo
+```sql
+SELECT * FROM performance_schema.replication_group_members;
+SET GLOBAL group_replication_bootstrap_group=OFF;
+START GROUP_REPLICATION;
+SET GLOBAL group_replication_bootstrap_group=ON;
+```
+
+- Setelah Migrate
+![Gambar Replika](img/migrate.png)
+
 1. Listen Server Flask
     ```sh
     python redisapi.py
@@ -371,23 +383,36 @@ DB_PASSWORD=easapp
 
 4. Tambah Data Buku
 
-![Gambar SS Buku]()
-![Gambar SS MySQL Cluster]()
+    ![Gambar SS Buku](img/tambahbuku.png)
+    ![Gambar SS MySQL Cluster](img/clustertambahbuku.png)
 
 5. Tambah Page
-![Gambar Tambah Page]()
+
+    ![Gambar Tambah Page](img/tambahpage.png)
+    ![Gambar Page](img/rediscluster.png)
 
 6. Increment Page
-![Gambar Incremen Page 1]()
-![Gambar Incremen Page 2]()
-![Gambar Incremen Page 3]()
+
+    ![Gambar Incremen Page 1](img/page1.png)
+
+    ![Gambar Incremen Page 2](img/page2.png)
+
+    ![Gambar Incremen Page 3](img/page3.png)
+
+7. Check Redis
+
+    ![Gambar Redis](img/redisincr.png)
+
+8. Ranking Redis
+
+    ![Gambar Ranking](img/redisrank.png)
+
+8. Ranking MongoDB
+
+    ![Gambar Ranking](img/mongorank.png)
 
 
-7. Ranking
-![Gambar Ranking]()
-
-
-### 7. Testing Jmeter 
+### 7. Testing Jmeter
 
 ### 8. Referensi 
 - [https://www.linode.com/docs/applications/big-data/how-to-install-and-configure-a-redis-cluster-on-ubuntu-1604/](https://www.linode.com/docs/applications/big-data/how-to-install-and-configure-a-redis-cluster-on-ubuntu-1604/)

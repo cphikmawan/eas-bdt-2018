@@ -71,4 +71,5 @@ Route::get('/pagelist','PageController@index');
 Route::get('/createpage','PageController@create');
 Route::post('/savepage','PageController@store');
 Route::get('/pagerank','PageController@ranking');
+Route::get('/mongorank','PageController@rankingMongo');
 Route::get('/thepages/{id}','PageController@pages');
