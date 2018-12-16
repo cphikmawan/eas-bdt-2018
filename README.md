@@ -414,6 +414,8 @@ SET GLOBAL group_replication_bootstrap_group=ON;
 
 ### 7. Testing Jmeter
 
+[Jmeter Result](jmeter)
+
 ### 8. Referensi 
 - [https://www.linode.com/docs/applications/big-data/how-to-install-and-configure-a-redis-cluster-on-ubuntu-1604/](https://www.linode.com/docs/applications/big-data/how-to-install-and-configure-a-redis-cluster-on-ubuntu-1604/)
 

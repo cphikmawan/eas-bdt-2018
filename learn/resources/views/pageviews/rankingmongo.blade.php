@@ -22,6 +22,8 @@
                         <th class="text-center">Key</th>
                         <th class="text-center">Name</th>
                         <th class="text-center">Count</th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +32,8 @@
                         <td class="text-center">{{ $data->key }}</td>
                         <td class="">{{ $data->name }}</td>
                         <td class="text-center">{{ $data->count }}</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
                     </tr>
                     @endforeach @endif
                 </tbody>

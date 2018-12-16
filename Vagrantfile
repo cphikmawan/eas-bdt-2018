@@ -59,7 +59,7 @@ Vagrant.configure("2") do |config|
       end
   
       node.vm.provision "shell", path: "redis-cluster/provision.sh", privileged: false
-      # node.vm.provision "shell", path: "redis/connect#{i}.sh", privileged: false
+      node.vm.provision "shell", path: "redis/connect#{i}.sh", privileged: false
     end
   end
 end
